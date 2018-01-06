@@ -1,0 +1,86 @@
+{
+  "For Loop": {
+    "prefix": "for",
+    "body": [
+      "for (let ${1:index} = 0; ${1:index} < ${2:array}.length; ${1:index}++) {",
+      "\t$0",
+      "}"
+    ],
+    "description": "For Loop"
+  },
+  "React Class": {
+    "prefix": "react",
+    "body": [
+      "// @flow",
+      "import React, {Component} from \"react\"",
+      "",
+      "type Props = {}",
+      "",
+      "class $1 extends Component<Props> {",
+      "\trender() {",
+      "\t\treturn (",
+      "\t\t\t<div>$0</div>",
+      "\t\t)",
+      "\t}",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ],
+    "description": "React class component template"
+  },
+  "API File Pattern": {
+    "prefix": "api",
+    "body": [
+      "// @flow",
+      "import type {Viewer} from \"../../../flow-types\"",
+      "",
+      "export type Fragment = {",
+      "\tid: number",
+      "}",
+      "",
+      "$0",
+      "",
+      "export default (viewer: Viewer) => {",
+      "\treturn {}",
+      "}",
+      ""
+    ]
+  },
+  "API Model Pattern": {
+    "prefix": "mm",
+    "body": [
+      "// @flow",
+      "import {helpers, connection} from \"../../../database\"",
+      "import sequelize from \"sequelize\"",
+      "",
+      "const fields = {",
+      "\tid: helpers.ID,",
+      "\t$0",
+      "}",
+      "const options = {",
+      "\ttableName: \"$2\"",
+      "}",
+      "",
+      "export const $1 = connection.define(\"$1\", fields, options)",
+      "",
+      "$1.associate = () => {",
+      "\t",
+      "}",
+      "",
+      "export default $1",
+      ""
+    ]
+  },
+  "Console Log": {
+    "prefix": "ll",
+    "body": "console.log(\"$0\")",
+    "description": "console.log()"
+  },
+  "Try-Catch": {
+    "prefix": "try",
+    "body": ["try {", "\t$0", "} catch (err) {", "\t", "}"],
+    "description": "Insert a try-catch block"
+  }
+}
+
